@@ -16,7 +16,7 @@ fun main() {
     val categories = listOf(electronicsCategory, clothingCategory, homeGoodsCategory)
 
 
-
+//hello brooo
 
     for (category in categories) {
         println("Category: ${category.get_category_name()}")
