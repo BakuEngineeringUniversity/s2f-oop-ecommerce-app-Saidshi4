@@ -1,4 +1,3 @@
-
 fun main() {
     val electronicDevice = ElectronicDevice()
     val clothing = Clothings()
@@ -16,16 +15,28 @@ fun main() {
     val categories = listOf(electronicsCategory, clothingCategory, homeGoodsCategory)
 
 
-//hello brooo
 
-    for (category in categories) {
-        println("Category: ${category.get_category_name()}")
+
+    for ((i,category) in categories.withIndex()) {
+        println("$i. Category: ${category.get_category_name()}")
         val products = category.get_products()
 
-        for ((index, product) in products.withIndex()) {
-            println("  $index. Product: ${product.name}, Price: ${product.price}$")
+        for ((j, product) in products.withIndex()) {
+            println("  $j. Product: ${product.name}, Price: ${product.price}$")
         }
     }
+    val shopping = Shopping()
+
+    println("*****************************************************************")
+    val t = clothing.tShirt
+    val e = electronicDevice.eReader
+    val b = homeGood.bedFrame
+    shopping.addItem(t)
+    shopping.addItem(e)
+    shopping.addItem(b)
+
+    shopping.printReceipt()
+
 
 }
 

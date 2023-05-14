@@ -8,7 +8,7 @@ class ElectronicDevice{
     private val gamingConsole =PhysicalProduct("Gaming Console",400f, 2.5f)
     private val charger =PhysicalProduct("Charger",50f, 0.3f)
     private val speaker =PhysicalProduct("Speaker",100f, 1f)
-    private val eReader =PhysicalProduct("E-reader",100f, 0.2f)
+     val eReader =DigitalProduct("E-reader",50f)
 
     val devices = listOf(
         laptop,
