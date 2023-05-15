@@ -1,15 +1,9 @@
 class Shopping {
-
-
     private val items: MutableList<Product> = mutableListOf()
 
-    fun addItem(item: PhysicalProduct) {
+    fun addItem(item: Product) {
         items.add(item)
     }
-    fun addItem(item: DigitalProduct){
-        items.add(item)
-    }
-
 
     fun getTotalCost(): Float {
         var totalCost = 0f
