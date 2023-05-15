@@ -2,23 +2,23 @@ import java.util.Scanner
 
 fun main() {
     val electronicDevice = ElectronicDevice()
-    val clothing = Clothings()
+    val clothing = Clothing()
     val homeGood = HomeGoods()
 
     val electronicsCategory = ElectronicsCategory()
-    electronicsCategory.add_product(electronicDevice.devices)
+    electronicsCategory.addProduct(electronicDevice.devices)
 
     val clothingCategory = ClothingCategory()
-    clothingCategory.add_product(clothing.clothings)
+    clothingCategory.addProduct(clothing.clothing)
 
     val homeGoodsCategory = HomeGoodsCategory()
-    homeGoodsCategory.add_product(homeGood.homeGoods)
+    homeGoodsCategory.addProduct(homeGood.homeGoods)
 
     val categories = listOf(electronicsCategory, clothingCategory, homeGoodsCategory)
 
     for ((i, category) in categories.withIndex()) {
-        println("$i. Category: ${category.get_category_name()}")
-        val products = category.get_products()
+        println("$i. Category: ${category.getCategoryName()}")
+        val products = category.getProducts()
         for ((j, product) in products.withIndex()) {
             println("  $j. Product: ${product.name}, Price: ${product.price}$")
         }
@@ -27,19 +27,22 @@ fun main() {
     println("*****************************************************************")
     println("Make your choice. What items will you buy?")
     val shopping = Shopping()
-    var sc = Scanner(System.`in`)
-    val n = sc.nextInt()
-    val m = sc.nextInt()
-    for ((i, category) in categories.withIndex()) {
-        val products = category.get_products()
-        for ((j,product) in products.withIndex()){
-            if (i == n && j == m){
-                shopping.addItem(product)
+    val sc = Scanner(System.`in`)
+
+    while (true){
+        val s = sc.nextLine()
+        if (s == "stop") break
+        val n = s[0].digitToInt()
+        val m = s[1].digitToInt()
+        for ((i, category) in categories.withIndex()) {
+            val products = category.getProducts()
+            for ((j,product) in products.withIndex()){
+                if (i == n && j == m){
+                    shopping.addItem(product)
+                }
             }
         }
     }
     shopping.printReceipt()
-
-
 }
 

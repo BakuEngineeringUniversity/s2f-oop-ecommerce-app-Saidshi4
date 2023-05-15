@@ -5,8 +5,9 @@ class Shopping {
         items.add(item)
     }
 
-    fun getTotalCost(): Float {
+    private fun getTotalCost(): Float {
         var totalCost = 0f
+
         items.forEach {
             totalCost += it.price
         }
@@ -15,10 +16,11 @@ class Shopping {
 
     fun printReceipt() {
 
-        println("ITEM\t\tPRICE\t\tWEIGHT")
+        println("ITEM\t\tPRICE")
         items.forEach {
-            println("${it.name}\t${it.price}")
+            println("${it.name}\t\t${it.price}")
         }
+
         println("TOTAL COST:\t${getTotalCost()}")
     }
 }

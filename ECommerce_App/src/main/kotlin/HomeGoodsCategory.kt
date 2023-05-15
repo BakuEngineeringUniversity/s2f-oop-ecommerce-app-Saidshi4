@@ -1,5 +1,5 @@
 class HomeGoodsCategory : Category("Home Goods") {
-    override fun get_category_name(): String {
+    override fun getCategoryName(): String {
         return name
     }
 }

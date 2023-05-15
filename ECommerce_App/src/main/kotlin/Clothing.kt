@@ -1,4 +1,4 @@
-class Clothings() {
+class Clothing() {
     private val tShirt = PhysicalProduct("T-shirt", 20f, 0.150f)
     private val jeans = PhysicalProduct("Jeans", 50f, 0.500f)
     private val dress = PhysicalProduct("Dress", 70f, 0.700f)
@@ -10,7 +10,7 @@ class Clothings() {
     private val jacket = PhysicalProduct("Jacket",80f,800f)
     private val sweatpants = PhysicalProduct("Sweatpants", 25f, 0.350f)
 
-    val clothings = listOf(
+    val clothing = listOf(
         tShirt,
         jeans,
         dress,
