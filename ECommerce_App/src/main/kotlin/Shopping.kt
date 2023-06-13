@@ -5,11 +5,19 @@ class Shopping {
         items.add(item)
     }
 
+
     private fun getTotalCost(): Float {
+
+
+
         var totalCost = 0f
 
         items.forEach {
             totalCost += it.price
+
+            if (it is Shippable) {
+                totalCost += it.getShippingCost()
+            }
         }
         return totalCost
     }
@@ -18,10 +26,18 @@ class Shopping {
 
         println("ITEM\t\tPRICE")
         items.forEach {
-            println("${it.name}\t\t${it.price}")
+            print("${it.name}\t\t${it.price}")
+            if (it is Shippable) {
+                println("\t\t${it.getShippingCost()}")
+            }
+            else {
+                println()
+            }
         }
 
         println("TOTAL COST:\t${getTotalCost()}")
     }
+
+
 }
 

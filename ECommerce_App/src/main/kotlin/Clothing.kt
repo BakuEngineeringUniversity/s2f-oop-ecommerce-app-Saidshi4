@@ -1,4 +1,4 @@
-class Clothing() {
+class Clothing {
     private val tShirt = PhysicalProduct("T-shirt", 20f, 0.150f)
     private val jeans = PhysicalProduct("Jeans", 50f, 0.500f)
     private val dress = PhysicalProduct("Dress", 70f, 0.700f)

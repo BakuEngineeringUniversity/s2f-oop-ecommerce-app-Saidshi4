@@ -22,6 +22,4 @@ class ElectronicDevice{
         speaker,
         eReader
     )
-
-
 }

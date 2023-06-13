@@ -7,8 +7,8 @@ class HomeGoods {
     private val microwaveOven = PhysicalProduct("Microwave Oven",700f,70f)
     private val tvStand = PhysicalProduct("Tv Stand",200f,20f)
     private val bookShelf = PhysicalProduct("Book Shelf",300f,30f)
-    private val coffeeTable = PhysicalProduct("Coffee Table",150f,15f)
-    private val armchair = PhysicalProduct("Armchair",250f,25f)
+    private val coffeeTable = PhysicalProduct("Coffee tbl",150f,15f)
+    private val armchair = DigitalProduct("Armchair",250f)
 
     val homeGoods = listOf(
         sofaSet,
@@ -22,5 +22,4 @@ class HomeGoods {
         coffeeTable,
         armchair
     )
-
 }
