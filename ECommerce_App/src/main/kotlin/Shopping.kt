@@ -4,6 +4,9 @@ class Shopping {
     fun addItem(item: Product) {
         items.add(item)
     }
+    fun removeItem(item: Product){
+        items.remove(item)
+    }
 
 
     private fun getTotalCost(): Float {
@@ -23,10 +26,11 @@ class Shopping {
     }
 
     fun printReceipt() {
-
+        var n = 0
         println("ITEM\t\tPRICE")
         items.forEach {
-            print("${it.name}\t\t${it.price}")
+            n += 1
+            print("$n. ${it.name}\t\t${it.price}")
             if (it is Shippable) {
                 println("\t\t${it.getShippingCost()}")
             }

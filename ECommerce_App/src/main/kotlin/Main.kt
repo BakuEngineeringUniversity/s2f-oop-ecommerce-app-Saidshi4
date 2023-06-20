@@ -33,7 +33,7 @@ fun main() {
         val s = sc.nextLine()
         if (s == "stop") break
         val n = s[0].digitToInt()
-        val m = s[1].digitToInt()
+        val m = s[2].digitToInt()
         for ((i, category) in categories.withIndex()) {
             val products = category.getProducts()
             for ((j,product) in products.withIndex()){
@@ -44,5 +44,39 @@ fun main() {
         }
     }
     shopping.printReceipt()
+    println("Do you want to make changes to your purchase?" +
+            "\n1-add new item" +
+            "\n2-remove item")
+    val q = sc.nextInt()
+    sc.nextLine()
+    if (q == 1){
+        val s = sc.nextLine()
+        val n = s[0].digitToInt()
+        val m = s[2].digitToInt()
+        for ((i, category) in categories.withIndex()) {
+            val products = category.getProducts()
+            for ((j, product) in products.withIndex()) {
+                if (i == n && j == m) {
+                    shopping.addItem(product)
+                }
+            }
+        }
+    }
+    if (q == 2){
+        val s = sc.nextLine()
+        val n = s[0].digitToInt()
+        val m = s[2].digitToInt()
+        for ((i, category) in categories.withIndex()) {
+            val products = category.getProducts()
+            for ((j, product) in products.withIndex()) {
+                if (i == n && j == m) {
+                    shopping.removeItem(product)
+                }
+            }
+        }
+    }
+    shopping.printReceipt()
+
+
 }
 
