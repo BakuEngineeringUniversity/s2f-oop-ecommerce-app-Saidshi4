@@ -1,1 +1,0 @@
-class DigitalProduct(name: String, price: Float) : Product(name, price)
